@@ -107,21 +107,21 @@ function initialize()
 
 let loader = new THREE.TextureLoader();
 let texture = loader.load( 'images/earth-sphere.jpg', render );
-let material1 = new THREE.MeshLambertMaterial( { map: texture, opacity: 0.5 } );
+let material1 = new THREE.MeshLambertMaterial( { map: texture, opacity: 0.8 } );
 
 mesh1 = new THREE.Mesh( geometry1, material1 );
-mesh1.position.y = 1;
+mesh1.position.y = 3;
 
 markerRoot1.add( mesh1 );
 
 let pointLight = new THREE.PointLight( 0xffffff, 1, 100 );
 pointLight.position.set(0.5,3,2);
 // create a mesh to help visualize the position of the light
-pointLight.add(
-	new THREE.Mesh(
-		new THREE.SphereBufferGeometry( 0.05, 16,8 ),
-		new THREE.MeshBasicMaterial({ color: 0xffffff, opacity: 0.5 })
-	)
+//pointLight.add(
+//	new THREE.Mesh(
+//		new THREE.SphereBufferGeometry( 0.05, 16,8 ),
+//		new THREE.MeshBasicMaterial({ color: 0xffffff, opacity: 0.5 })
+//	)
 );
 markerRoot1.add( pointLight );
 }
